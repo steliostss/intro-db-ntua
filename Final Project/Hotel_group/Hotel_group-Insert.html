@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html style="background-image:url(../Images/background.jpg);">
+
+	<head>
+		<title> DB 2017-18 </title>
+		<meta charset="UTF-8">
+		<link type="text/css" rel="stylesheet" href="../CSS/stylesheet_general.css"/>
+		<link rel="icon" href="../Images/favicon.png"/>
+		
+	</head>
+
+	<body>
+		<form action="Hotel_group-Insert.php" method="GET" align="center">
+			<legend><h1 style="font-family:Segoe UI;">Hotel Group Details: </h1></legend>
+			<div>
+				<label for="Hotel_Group_id">Hotel Group Name: </label>
+				<input type="text" name="Hotel_Group_id" id="Hotel_Group_id" 
+				required autofocus placeholder="Hotel Group Name" 
+				pattern="[a-zA-Z]{3,}" 
+				title="Please enter more than 3 letters">
+			</div>
+			<br><br>
+			<div>
+				<label for="city">City: </label>
+				<input type="text" name="city" id="city" 
+				required autofocus placeholder="City"
+				title="Enter more than 3 letters">
+			</div>
+			<br><br>
+			<div>
+				<label for="street">Street: </label>
+				<input type="text" name="street" id="street" 
+				required autofocus placeholder="Street"
+				title="Enter more than 3 letters">
+			</div>
+			<br><br>
+			<div>
+				<label for="street_number">Street Number: </label>
+				<input type="number" name="street_number" style="width:55% "id="street_number" 
+				required autofocus placeholder="Street Number"
+				pattern="[0-9]{1,}" 
+				title="Enter at least 1 digit">
+			</div>
+			<br><br>
+			<div>
+				<label for="postal_code">Postal Code: </label>
+				<input type="text" name="postal_code" id="postal_code" 
+				required autofocus placeholder="Postal Code"
+				pattern="[0-9]{5}" 
+				title="Enter exactly 5 digits">
+			</div>
+			<br><br>
+			<br><br>
+			<input type="submit" value="Submit">
+		</form>
+	</body>
+
+</html>

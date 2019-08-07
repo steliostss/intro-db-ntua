@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html style="background-image:url(../Images/background.jpg);">
+
+	<head>
+		<title> DB 2017-18 </title>
+		<meta charset="UTF-8">
+		<link type="text/css" rel="stylesheet" href="../CSS/stylesheet_general.css"/>
+		<link rel="icon" href="../Images/favicon.png"/>
+		
+	</head>
+
+	<body>
+		<form action="Customer-Insert.php" method="GET" align="center">
+			<legend><h1 style="font-family:Segoe UI;">Booking Details:  </h1></legend>
+			<div>
+				<label for="ssn">Customer SSN: </label>
+				<input type="text" name="ssn" id="ssn" 
+				required autofocus placeholder="Customer SSN" 
+				pattern="[0-9]{8}" 
+				title="Enter exactly 8 digits">
+			</div>
+			<br><br>
+			<div>
+				<label for="area">Area: </label>
+				<input style= "width:75%" type="select" name="area" id="area" 
+				autofocus placeholder="Area" 
+				pattern="[a-zA-Z]{3,}" 
+				title="Enter more than 3 digits">
+			</div>
+			<br><br>
+			<div>
+				<label for="date">Start date: </label>
+				<input type="date" name="date" min="2018-05-26"
+				required autofocus placeholder="mm/dd/yyyy">
+			</div>
+			<br><br>
+			<div>
+				<label for="date">End date: </label>
+				<input type="date" name="date" min="2018-05-26"
+				required autofocus placeholder="mm/dd/yyyy">
+			</div>
+			<br><br>
+			<div>
+				<label for="hotel_group">Hotel Group: </label>
+				<select name="hotel_group">
+					<option value="" disabled selected>Select your option</option>
+					<?php 
+						$con = mysqli_connect("localhost:3306","root","PROJECT","hotels");
+						or die ('Cannot connect to db');
+						
+						$sql = mysqli_query($con, "SELECT Hotel_Groupname FROM Hotel_Group");
+						while ($row = $res->fetch_assoc()) 
+						{
+							echo '<option value=" '.$row['Hotel_Groupname'].' "> '.$row['name']' </option>';
+						}
+						mysqli_close($con);
+					?>
+				</select>
+			</div>
+			<br><br>
+			<div>
+				<label for="capacity">Room Capacity: </label>
+				<select name="capacity">
+					<option value="" disabled selected>Select your option</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="5">6</option>
+				</select>
+			</div>
+			<br><br>
+			<div>
+				<label for="price-min">Min Price (€):</label>
+				<input type="number" name="price-min" step=10 id="price-min" 
+				value="50" min="50" max="1000">
+				&nbsp; &nbsp;
+				<label for="price-max">Max Price (€):</label>
+				<input type="number" name="price-max" step=10 id="price-max"
+				value="200" min="50" max="1000">
+			</div>
+			<br><br>
+			<div>
+				<label for="fridge">Fridge:</label>
+				<input type="checkbox" name="fridge">
+				<label for="kitchen">Kitchen:</label>
+				<input type="checkbox" name="kitchen">
+				<label for="wifi">WiFi:</label>
+				<input type="checkbox" name="wifi">
+				<label for="tv">TV:</label>
+				<input type="checkbox" name="tv">
+				<label for="sauna">Sauna:</label>
+				<input type="checkbox" name="sauna">
+			</div>
+			<br><br>
+			<div>
+				<label for="capacity">View: </label>
+				<select name="capacity">
+					<option value="" disabled selected>Select your option</option>
+					<option value="sea">Sea</option>
+					<option value="sea">Pool</option>
+				</select>
+			</div>
+			<br><br>
+			<input type="submit" value="Submit">
+		</form>
+	</body>
+
+</html>

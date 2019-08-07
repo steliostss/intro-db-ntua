@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html style="background-image:url(../Images/background.jpg);">
+
+	<head>
+		<title> DB 2017-18 </title>
+		<meta charset="UTF-8">
+		<link type="text/css" rel="stylesheet" href="CSS/stylesheet_general.css"/>
+		<link rel="icon" href="../Images/favicon.png"/>
+		
+	</head>
+
+	<body>
+		<form action="" method="GET">
+			<fieldset align="center">
+				<legend>Personal Details: </legend>
+				<div>
+					<label for="first_name">First Name: </label>
+					<input type="text" name="first_name" id="first_name" 
+					required autofocus placeholder="Your First Name" 
+					pattern="[a-zA-Z]{3,}" title="Please enter more than three letters">
+				</div>
+				<br>
+				<div>
+					<label for="last_name">Last Name: </label>
+					<input type="text" name="last_name" id="last_name" 
+					required autofocus placeholder="Your Last Name"
+					pattern="[a-zA-Z]{3,}" 
+					title="Please enter more than three letters">
+				</div>
+				<br>
+				<div>
+					<label for="Email">Email: </label>
+					<input type="text" name="Email" id="Email" 
+					required autofocus placeholder="Your Email"
+					pattern="[a-zA-Z]{3,}@[a-zA-Z]{3,}[.]{1}[a-zA-Z]{2,}" 
+					title="Please enter more than three letters">
+				</div>
+				<br>
+				<div>
+					<label for="phone_number">Phone Number: </label>
+					<input type="text" name="phone_number" id="phone_number" 
+					required autofocus placeholder="Your Phone Number"
+					pattern="[0-9]{10,}" 
+					title="Please enter exactly 10 numbers">
+				</div>
+				<br>
+				<div>
+					<label for="country">Country: </label>
+					<select name="country" required>
+						<option value=""> </option>
+						<option value="GR">GR</option>
+						<option value="US">US</option>
+						<option value="UK">UK</option>
+						<option value="Other">Other</option>
+					</select>
+				</div>
+			</fieldset>
+			<br>
+			<fieldset align="center">
+				<legend>Booking Details: </legend>
+				<label for="date">From: </label>
+				<input type="date" name="date" min="2018-05-26">
+				<label for="date">To: </label>
+				<input type="date" name="date" min="2018-05-26">			
+			</fieldset>
+		</form>
+	</body>
+
+</html>

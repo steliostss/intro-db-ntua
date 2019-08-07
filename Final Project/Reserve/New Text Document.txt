@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html style="background-image:url(../Images/background.jpg);">
+
+	<head>
+		<title> DB 2017-18 </title>
+		<meta charset="UTF-8">
+		<link type="text/css" rel="stylesheet" href="../CSS/stylesheet_general.css"/>
+		<link rel="icon" href="../Images/favicon.png"/>
+		
+	</head>
+
+	<body>
+	
+		<?php	
+			$con = mysqli_connect("localhost:3306","root","PROJECT","basic");
+			if (mysqli_connect_errno())
+			{
+				die('Could not connect');
+			}
+			
+			// $City					=		$_GET['City'];
+			// $Start_Date				=		$_GET['start_date'];
+			// $Finish_Date				=		$_GET['end_date'];
+			// $Hotel_Group_id			=		$_GET['Hotel_Group_id'];
+			// $stars_min				=		$_GET['stars_min'];
+			// $stars_max				=		$_GET['stars_max'];
+			// $Capacity				=		$_GET['capacity'];
+			// $price_min				=		$_GET['price_min'];
+			// $price_max				=		$_GET['price_max'];
+			// $fridge					=		$_GET['fridge'];
+			// $wifi					=		$_GET['wifi'];
+			// $tv						=		$_GET['tv'];
+			// $sauna					=		$_GET['sauna'];
+			// $kitchen					=		$_GET['kitchen'];
+			// $view 					=		$_GET['view'];
+
+			$myquery = "
+			SELECT 
+				Capacity, 
+				View,
+				Price
+			FROM
+				Hotel_room AS room;";
+			
+			echo "HELLO<br><br>";
+			
+			$result = mysqli_query($con, $myquery); 
+			
+				
+			if($result === FALSE) {
+				die(mysqli_error($con)); 
+			}
+			mysqli_close($con);
+			echo '<label for="City">City: </label>
+				<select style= "width:70%" name="City">
+				<option value="NULL" selected>All</option>';
+				$num_results = mysqli_num_rows($result);
+				for ($i=0;$i<$num_results;$i++) {
+					$row = mysqli_fetch_array($result);
+					$name = $row['City'];
+					echo '<option value="' .$name. '">' .$name. '</option>';
+				}
+			echo '</select>';
+			
+			if($mysqli_num_rows($result) > 0) {
+				while($row = mysqli_fetch_array($result)) {
+					echo '
+						"Capacity:" . $row["Capacity"]. 
+						"View:" . $row["View"]. 
+						"Price:" . $row["Price"]. 
+						"<br>"';
+				}
+			}
+			else { 
+				echo '0 results';
+			}
+		?>	
+		HELLO 
+	
+	</body>
+</html>
