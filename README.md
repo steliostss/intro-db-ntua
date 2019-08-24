@@ -5,4 +5,4 @@ This repository hosts the project for the course 3.4.3123.6 of ECE-NTUA: [Introd
 ## Contributors
 - [Stelios Tsagkarakis](https://github.com/steliostss)
 - [Vaggelis Apostolakis](https://github.com/Spacon)
-- Dimitra Pintzou
+- [Dimitra Pintzou](https://github.com/mitsiii)
